@@ -2,9 +2,8 @@
 An Ensemble of Binary Classifiers
 
 
-Given
-
 1. Generates binary classifiers:
+
 This is a function that takes as input
 - the parameters alfa and beta of a Beta distribution, representing a distribution of the classifier accuracy for negative items
 - the parameters alfa and beta of a Beta distribution, representing a distribution of the classifier accuracy for positive items
@@ -12,10 +11,11 @@ This is a function that takes as input
 - a correlation ( number in -1,1 range)
 - a cost (a positive real number)
 
-And in output generate the simulator of the classifier, that is, generates an object whose classify() function takes an input an item, and classifies it with an accuracy that depends on what has been generated
+And in output generate the simulator of the classifier, that generates an object whose classify() function takes an input an item, and classifies it with an accuracy that depends on what has been generated
 
 
-The classify function works as follows
+The classify() function works as follows:
+
 - it gets the item to be classified (we know the true label for the item, so classify function simply simulate what the classifier, with the given accuracy, would generate when it receives an item with this label).
 - it asks to the seed classifier, if any, to predict the class.
 - it then predicts the class by itself, and it predicts correctly with a probability that depends on the accuracy value (which is different for true and false items)
