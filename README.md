@@ -1,4 +1,4 @@
-# BinaryClassifierEnsemble
+# BinaryClassifiersEnsemble
 An Ensemble of Binary Classifiers
 
 
