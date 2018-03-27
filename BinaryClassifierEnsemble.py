@@ -15,7 +15,7 @@ def f(a1, b1, a2, b2, seed, correlation):
     acForPositive = beta.rvs(a1, b1, size=1)
     acForNegative = beta.rvs(a2, b2, size=1)
 
-    classifier = Classifier(acForPositive, acFoNegative, seed, correlation)
+    classifier = Classifier(acForPositive, acForNegative, seed, correlation)
 
     return classifier
 
