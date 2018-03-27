@@ -1,7 +1,6 @@
 from scipy.stats import beta
-import random
-
 from sklearn.metrics import accuracy_score
+import random
 
 
 class Classifier(object):
