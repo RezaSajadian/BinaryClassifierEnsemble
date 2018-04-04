@@ -1,44 +1,15 @@
-# BinaryClassifiersEnsemble
-An Ensemble of Binary Classifiers
+what is done in the existing program is as follows:
 
+The goal is to create an ensemble of classifiers which is simulating a group of classifiers which are classifying an array of (item, label) data, and by means of an beta distribution, aiming to calculate the accuracy of the local machine's accuracy(mentioned as simulation) as the first pace, and test the process to create, predict, and provide the accuracy of the classification by a majority voting policy.
 
-1. Generates binary classifiers:
+Classifiers are Beta classifiers which are receiving the alpha and beta arguments of the distribution by the machine's random number generation, and drawing instances from the Classifier class in done by means of a function which each time receives 6 input arguments, 4 arguments belonging to 2 beta distributions to generate classification results of beta functions for Positive and Negative default item classification accuracy of the classifier instance, one belonging to the classification result of a seed classifier(if any), and one argument representing the correlation of the existing classifier instance and the previous classifier's result.
 
-This is a function that takes as input
-- the parameters alfa and beta of a Beta distribution, representing a distribution of the classifier accuracy for negative items
-- the parameters alfa and beta of a Beta distribution, representing a distribution of the classifier accuracy for positive items
-- a seed classifier, that is, a classifier to which this classifier we are generating is correlated
-- a correlation ( number in -1,1 range)
-- a cost (a positive real number)
+The Classify function is the function which receives an item and a classifier, and performs the classification based on the generated probability of the item, to be whether a positive or negative item, and returns its prediction as a result, based on its beta distribution behavior.
 
-And in output generate the simulator of the classifier, that generates an object whose classify() function takes an input an item, and classifies it with an accuracy that depends on what has been generated
+Each time that the classify function runs, we generate the input values by the instantiateValues function, and compare them to the generated data(as the ground truth data, again randomly generated), and by each call of the classify function the result of one prediction is appended to an array called Votes.
 
+The generateData function is planned to have certain number of negative and positive items, to have the desired proportion of the negative and positive items in our dataset, and also to be able to test the simulator for different scenarios of mainly negative items, or mainly positives.
 
-The classify() function works as follows:
+This process is done once per each classifier call which is for each item, and in order to have the votes of the group of classifiers, we do this process for the demanded number of times(here 20 classification epochs, considering the natural phenomenon that the prediction accuracy converges raising the number of classifiers), and then based on a majority voting process, the vote of 20 classifiers are appended to an array called predict.
 
-- it gets the item to be classified (we know the true label for the item, so classify function simply simulate what the classifier, with the given accuracy, would generate when it receives an item with this label).
-- it asks to the seed classifier, if any, to predict the class.
-- it then predicts the class by itself, and it predicts correctly with a probability that depends on the accuracy value (which is different for true and false items)
-- it then picks with probability [correlation] the value predicted by the seed (or it’s opposite, if the correlation is negative) and with 1-[correlation] it picks the value predicted by the classifier
-
-
-2. We create a bunch of classifiers, and specifically, a list or array
-So, we implement a function that given
-i) again a beta distribution that describes where we see the distribution of classifiers to be,
-ii) again a beta that picks a correlation value with the previous classifier (previous in the list)
-
-Creates such array of classifiers
-
-
-3. Now we have a bunch of classifiers.
-We have a set of T <items, true label> in input, and our set of classifiers, and we want to:
-
-A. measure the correlation among each pair of classifiers
-B. filter classifiers that, after being tested in these T items, have a probability > P of having an accuracy lower than A. Then, use the remaining classifiers to make a prediction using i) majority voting, ii) weighted majority voting (where the weight is the accuracy of the classifiers as guessed from testing)
-C. Use the data in T to build a model (initially, a linear regression) of the classifiers
-
-
-Notice that because of the correlation, you have to compute each prediction of a classifier after you compute the previous one (regardless of whether we filter that classifier out)
-
-
-
+In order to judge the result of the classifier accuracy, the accuracy_score from the ScikitLearn library is providing the accuracy score of the ensemble per item, and for all the items in the dataset.
