@@ -1,4 +1,14 @@
-what is done in the existing program is as follows:
+
+
+
+
+
+
+Assignment 1 (1st part):
+
+
+
+What is done in the existing program is as follows:
 
 The goal is to create an ensemble of classifiers which is simulating a group of classifiers which are classifying an array of (item, label) data, and by means of an beta distribution, aiming to calculate the accuracy of the local machine's accuracy(mentioned as simulation) as the first pace, and test the process to create, predict, and provide the accuracy of the classification by a majority voting policy.
 
@@ -14,8 +24,32 @@ This process is done once per each classifier call which is for each item, and i
 
 In order to judge the result of the classifier accuracy, the accuracy_score from the ScikitLearn library is providing the accuracy score of the ensemble per item, and for all the items in the dataset.
 
+
+
 Results:
 
 So, one schema is the proportion of 90% to 10% respectively belonging to Mainlypositive items, and just 10% negative items(positives as 1 and negatives as 0).
-Another case is the test of the opposite case, to have mainly Negative items generated, and the minority belong to Positives, which by repeating the process, the result is not showing very reliable(infact the point I was going to have consulted)
-But, as said previously, by raising the number of classifiers to high enough numbers(more than 5000), the result converges, and keeps steadily returning the manually set amount of 90%-10% or any other case intended.
+Another case is the test of the opposite case, to have mainly Negative items generated, and the minority belong to Positives, which by repeating the process, the result is not showing very reliable, But, as said previously, by raising the number of classifiers to high enough numbers(more than 5000), the result converges, and keeps steadily returning the manually set amount of 90%-10% or any other case intended.
+
+
+
+
+
+
+
+
+
+
+
+########     Assignment 1 (2nd part)
+
+
+
+
+
+This assignment is meant to present a metaClassifier which incorporates 
+an n number of binary classifiers in an ensemble, and represent a prediction accuracy
+based on a random argumented beta distribution.
+Receiveing the voting Threshold of desire, and the number of classifiers representing, 
+presents the expected voting as a classifier...
+
