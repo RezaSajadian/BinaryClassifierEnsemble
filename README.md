@@ -53,3 +53,24 @@ based on a random argumented beta distribution.
 Receiveing the voting Threshold of desire, and the number of classifiers representing, 
 presents the expected voting as a classifier...
 
+
+
+
+
+
+
+########      Assignment 1 (3rd part)
+
+The 3rd part of the assignment 1 presents some changes to the previously presented meta classifier, which represented an ensemble of binary classifiers, but to investigate the results of the ensemble after setting different classifier precision, correlation and majority_voting threshold, and setting these amounts to see the changing behavior of the ensemble prediction accuracy, the results seem promising.
+
+Changing the input to the distribution function for each individual classifier, the rest of the changes came through, and various scenarios were applied to the correlation amount setting, the input amount feeding of the seed classifier and the ensemble classifiers, and the proportion of the positive-negative items distribution in the grount-truth data.
+
+The suggested number of classifiers in the ensemble was 10, which works acceptably fine, and raising this number to 30,
+raises the sccuracy even better.
+
+
+
+
+
+
+
