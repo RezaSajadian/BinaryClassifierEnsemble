@@ -1,7 +1,7 @@
-import random
 from BinaryClassifierEnsemble import instantiateValues, generateData
 from sklearn.metrics import accuracy_score
 from scipy.stats import beta
+import random
 
 
 class Classifier(object):
