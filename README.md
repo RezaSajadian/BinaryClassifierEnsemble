@@ -4,7 +4,7 @@
 
 
 
-Assignment 1 (1st part):
+Part 1:
 
 
 
@@ -41,7 +41,7 @@ Another case is the test of the opposite case, to have mainly Negative items gen
 
 
 
-########     Assignment 1 (2nd part)
+Part 2:
 
 
 
@@ -58,8 +58,7 @@ presents the expected voting as a classifier...
 
 
 
-
-########      Assignment 1 (3rd part)
+Part 3:
 
 The 3rd part of the assignment 1 presents some changes to the previously presented meta classifier, which represented an ensemble of binary classifiers, but to investigate the results of the ensemble after setting different classifier precision, correlation and majority_voting threshold, and setting these amounts to see the changing behavior of the ensemble prediction accuracy, the results seem promising.
 
