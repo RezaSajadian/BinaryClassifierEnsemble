@@ -1,16 +1,4 @@
-
-
-
-
-
-
-Part 1:
-
-
-
-What is done in the existing program is as follows:
-
-The goal is to create an ensemble of classifiers which is simulating a group of classifiers which are classifying an array of (item, label) data, and by means of an beta distribution, aiming to calculate the accuracy of the local machine's accuracy(mentioned as simulation) as the first pace, and test the process to create, predict, and provide the accuracy of the classification by a majority voting policy.
+The goal of this piece of code is to create an ensemble of classifiers, which are simulating a group of classifiers which are classifying an array of (item, label) data, and by means of a beta distribution, aiming to calculate the accuracy of the local machine's accuracy (mentioned as simulation) in the first place, and test the process to create, predict, and provide the accuracy of the classification by a majority voting policy.
 
 Classifiers are Beta classifiers which are receiving the alpha and beta arguments of the distribution by the machine's random number generation, and drawing instances from the Classifier class in done by means of a function which each time receives 6 input arguments, 4 arguments belonging to 2 beta distributions to generate classification results of beta functions for Positive and Negative default item classification accuracy of the classifier instance, one belonging to the classification result of a seed classifier(if any), and one argument representing the correlation of the existing classifier instance and the previous classifier's result. The function f is provoding us 2 values for negative and positive prediction accuracy, one value for the seed classifier's probability to be used, and one correlation value to define how the existing prediction is used in relation to the previous classifier's classification result.
 
@@ -32,44 +20,20 @@ So, one schema is the proportion of 90% to 10% respectively belonging to Mainlyp
 Another case is the test of the opposite case, to have mainly Negative items generated, and the minority belong to Positives, which by repeating the process, the result is not showing very reliable, But, as said previously, by raising the number of classifiers to high enough numbers(more than 5000), the result converges, and keeps steadily returning the manually set amount of 90%-10% or any other case intended.
 
 
+In the other file, named MetaClassifier, changes happened to the stand-alone classifiers, which is as follows:
 
-
-
-
-
-
-
-
-
-Part 2:
-
-
-
-
-
-This assignment is meant to present a metaClassifier which incorporates 
-an n number of binary classifiers in an ensemble, and represent a prediction accuracy
+A MetaClassifier which incorporates an n number of binary classifiers in an ensemble, and represent a prediction accuracy
 based on a random argumented beta distribution.
-Receiveing the voting Threshold of desire, and the number of classifiers representing, 
-presents the expected voting as a classifier...
+Receiveing the voting Threshold of desire, and the number of classifiers representing, presents the expected voting as a classifier...
 
 
 
-
-
-
-Part 3:
-
-The 3rd part of the assignment 1 presents some changes to the previously presented meta classifier, which represented an ensemble of binary classifiers, but to investigate the results of the ensemble after setting different classifier precision, correlation and majority_voting threshold, and setting these amounts to see the changing behavior of the ensemble prediction accuracy, the results seem promising.
+The third edition to this project is included in the file named metaClassifier_VarCorrPrec, which presents some changes to the previously presented meta classifier, which represented an ensemble of binary classifiers, but to investigate the results of the ensemble after setting different classifier precision, correlation and majority_voting threshold, and setting these amounts to see the changing behavior of the ensemble prediction accuracy, the results seem promising.
 
 Changing the input to the distribution function for each individual classifier, the rest of the changes came through, and various scenarios were applied to the correlation amount setting, the input amount feeding of the seed classifier and the ensemble classifiers, and the proportion of the positive-negative items distribution in the grount-truth data.
 
 The suggested number of classifiers in the ensemble was 10, which works acceptably fine, and raising this number to 30,
-raises the sccuracy even better.
-
-
-
-
+raises the sccuracy even higher.
 
 
 
